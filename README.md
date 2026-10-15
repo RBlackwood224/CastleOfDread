@@ -1,74 +1,83 @@
-# Castle of Dread
+# 🏰 Castle of Dread
 
-A browser-based text-adventure roguelite. Cross the Lava Bridge, explore a 50-room cursed castle whose contents are different every run, and find out who really controls the dragon, and what became of Princess Lysandra.
+> *Centuries ago the Dragon King Xykon awoke beneath a volcano and raised the Castle of Dread. Princess Lysandra vanished. Some say she is a prisoner. Others say she is the doom itself.*
+>
+> *You step onto the Lava Bridge. Once you cross, there is no turning back.*
 
-No installation, no build step, no dependencies: plain HTML, CSS and JavaScript.
+A text-adventure roguelite that runs right in your browser. Fifty rooms, three classes, one castle that is never quite the same twice.
 
-## Play
+## ▶ Play now
 
-- **Locally:** download or clone the repo and open `index.html` in any modern browser.
-- **On GitHub Pages:** *Settings → Pages → Deploy from branch → `main` / root*. The game will be served at your Pages URL.
+**https://rblackwood224.github.io/CastleOfDread/**
 
-Progress is stored in your browser's `localStorage` only. Nothing is sent anywhere.
+No download, no account, no install. If the link doesn't load yet, GitHub Pages may still be switching on (*Settings → Pages → Deploy from branch → `main` / root*), or you can download the repo and open `index.html`.
 
-## Features
+Your progress is saved in your own browser only. Nothing is ever sent anywhere.
 
-- **50 rooms, a different castle every run:** the layout is fixed, but shops, traders, chests, mimics, dark rooms, riddle spirits and enemies are randomized per run.
-- **3 classes:**
+## What makes it tick
 
-  | Class | Style |
-  |---|---|
-  | Warrior | High attack and carry weight, straightforward melee |
-  | Wizard | Mana-driven spells, tomes and staves, faster levelling |
-  | Rogue | Best flee chance, daggers and bows |
+**A castle that changes every run.** The 50 rooms stay put, but shops, merchants, chests, mimics, dark rooms, riddle spirits and monsters are reshuffled each time.
 
-- **Zones & enemy pools:** danger scales with how deep you are. The Lower Halls, Cellars, Garden, Upper Manor and Tower Approach each favour different creatures. About 20 enemy types, each with their own behaviour (lifesteal, poison, shrieks that shake your aim, charged heavy blows, packs on higher difficulties).
-- **Castle Mood (Dread):** the castle reacts to reckless play and close calls, and grows more dangerous until things calm down.
-- **Echoes:** you sometimes hear something coming, but stone lies about direction.
-- **Respawns:** cleared rooms don't stay empty forever.
-- **Poison & status effects:** poison burns for a couple of rooms or can be cured instantly with an Antidote. Also Rattled, Shaken, Last Stand and flee fatigue.
-- **Economy & crafting:** Blacksmith (weapons, whetstones, Tempered Ore upgrades) and Alchemist (potions, ingredients, recipes), plus herb/mushroom crafting. Meeting a merchant gives you a summoning scroll, but summoned prices run higher.
-- **Chests with tools:** trapped, stuck or biting chests need the right tool (Lockpick, Crowbar, Oil Can, Bucket of Water).
-- **Cursed items & riddles:** powerful gear with hidden prices, and spirits that won't let you pass until you answer.
-- **Level-up choices:** each level you pick where the point goes (HP, Attack, Defense, Mana, Carry Weight, Luck or Flee).
-- **Limited saving:** one free save per run, plus rare Save Scrolls hidden in the castle.
-- **Bestiary & endings:** creatures seen and endings found persist across runs.
-- **4 difficulties:** Easy, Normal, Hard and Extreme (stronger enemies, faster Dread, multi-creature encounters). Changeable any time in Settings.
-- **In-game Manual** (menu or `manual` command), and a map that reveals as you explore.
+**Three ways to play**
 
-## Commands
+| Class | Feel |
+|---|---|
+| ⚔️ Warrior | Tough, hits hard, carries the most |
+| 🔮 Wizard | Mana and spells, slower start, levels faster |
+| 🗡️ Rogue | Slippery: the best chance to flee, daggers and bows |
+
+**A castle that fights back**
+- Each wing has its own monsters, and they don't all fight the same way: some drain you, some shriek to throw off your aim, some wind up for a heavy blow.
+- You'll sometimes *hear* something coming, but stone lies about direction.
+- The castle's mood rises when you play recklessly and settles when you play carefully.
+- Cleared rooms don't stay empty forever.
+- Poison, shaken nerves, last stands, cursed weapons.
+
+**Choices that matter**
+- Spend each level-up point where *you* want it.
+- A Blacksmith for weapons and upgrades, an Alchemist for potions and recipes, and a crafting system for everything in between.
+- Chests that need the right tool, and riddles that won't let you pass until you answer.
+- Only **one free save per run**. More saves mean finding rare Save Scrolls.
+- A bestiary and an ending log that remember across runs.
+
+**Four difficulties:** Easy, Normal, Hard and Extreme (where a room may hide more than one creature). Change it any time in Settings.
+
+## How to play
+
+Type commands into the box at the bottom.
 
 | Command | What it does |
 |---|---|
-| `go north/south/east/west` | Move |
-| `attack`, `use <item>`, `equip <item>`, `flee` | Combat and items |
-| `inventory` (`inv`), `status`, `map` | Check yourself and the map |
-| `take`, `open`, `store` / `retrieve` | Loot, chests and your stash |
-| `shop`, `buy`, `sell`, `upgrade`, `craft`, `recipes`, `exit shop` | Merchants and crafting |
+| `go north` / `south` / `east` / `west` | Move |
+| `attack`, `use <item>`, `equip <item>`, `flee` | Fight and manage gear |
+| `inventory`, `status`, `map` | Look at yourself and the castle |
+| `take`, `open`, `store`, `retrieve` | Loot, chests, your stash |
+| `shop`, `buy`, `sell`, `upgrade`, `craft`, `recipes` | Merchants and crafting |
 | `levelup <stat>` | Spend a level-up point |
-| `save`, `load`, `reset` | Save (uses your free save or a Save Scroll), load, restart |
-| `bestiary` (or `codex`) | Creatures and endings seen so far |
-| `manual` | Full rules |
+| `save`, `load`, `reset` | Save and load |
+| `bestiary` | Creatures and endings you've found |
+| `manual` | The full in-game rulebook |
 | `help` | Quick command reference |
 
-## Project structure
+Stuck? Open the **Manual** from the main menu.
+
+## Good to know
+
+- The game is in English for now.
+- It's a work in progress: balance and content are still being tuned, so bug reports and feedback are welcome (open an Issue).
+- The Wizard is currently the hardest class.
+
+## Built with
+
+Plain HTML, CSS and JavaScript, with no frameworks and no dependencies. Menu background generated with Google AI.
 
 ```
-index.html   page and screens (menu, character creation, story, manual, settings, game)
+index.html   screens and layout
 style.css    styling
-script.js    all game logic
+script.js    game logic
 images/      menu background
 ```
 
-## Notes
-
-- English only for now.
-- Balance target (bot-simulated win rates, roughly): Easy ~40-60%, Normal ~25-35%, Hard ~15%, Extreme ~5-10%. Wizard is currently the weakest class.
-
-## Credits
-
-Menu background image generated with Google AI.
-
 ## License
 
-All rights reserved, unless a license file says otherwise.
+All rights reserved. © 2026
