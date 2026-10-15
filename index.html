@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castle of Dread</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-menu-screen" class="screen-container">
+        <div class="menu-overlay">
+            <h1>Castle of Dread</h1>
+            <div class="menu-buttons">
+                <button type="button" id="start-game-button-menu">START GAME</button>
+                <button type="button" id="story-button">STORY</button>
+                <button type="button" id="manual-button-menu">MANUAL</button>
+                <button type="button" id="settings-button">SETTINGS</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="char-creation-screen" class="screen-container hidden">
+        <h1>Create Your Character</h1>
+        <div class="input-group">
+            <label for="player-name">Character Name:</label>
+            <input type="text" id="player-name" placeholder="Enter your name">
+        </div>
+        <div class="input-group">
+            <p>Gender:</p>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+        <div class="input-group">
+            <p>Class:</p>
+            <label><input type="radio" name="class" value="warrior"> Warrior (High HP, High Attack)</label><br>
+            <label><input type="radio" name="class" value="mage"> Wizard (High Mana, Spells)</label><br>
+            <label><input type="radio" name="class" value="rogue"> Rogue (High Dodge, Flee)</label>
+        </div>
+        <button type="button" id="start-game-button-char-create">Start Adventure</button>
+    </div>
+
+    <div id="story-screen" class="screen-container hidden">
+        <h1>The Story of the Castle of Dread</h1>
+        <div class="story-text">
+            <p>
+                Centuries ago, over the lush, flourishing Kingdom of Aethelgard, dark clouds gathered. 
+                In the heart of the kingdom, within a volcano long believed dormant, the Dragon King Xykon awoke and raised the Castle of Dread. 
+                With the kingdom in ruin, Princess Lysandra disappeared. Some say she is prisoner, others claim she is the doom herself. <br>
+                You, a wandering knight of uncertain fate, step onto the Lava Bridge – the only way into the cursed castle. 
+                Once you cross, there is no turning back. Glory, redemption, or death await. <br><br>
+                Who controls the dragon? What is the fate of the princess? What secrets lie deep within these walls? <br>
+                The Castle of Dread awaits.
+            </p>
+        </div>
+        <button type="button" id="back-to-menu-button-story">BACK</button>
+    </div>
+
+    <div id="manual-screen" class="screen-container hidden">
+        <h1>Manual</h1>
+        <div class="story-text" id="manual-screen-content"></div>
+        <button type="button" id="back-to-menu-button-manual">BACK</button>
+    </div>
+
+    <div id="settings-screen" class="screen-container hidden">
+        <h1>Settings</h1>
+        <div class="settings-options">
+            <p>Difficulty:</p>
+            <div class="difficulty-buttons">
+                <button type="button" class="difficulty-btn" data-difficulty="easy">Easy</button>
+                <button type="button" class="difficulty-btn" data-difficulty="normal">Normal</button>
+                <button type="button" class="difficulty-btn" data-difficulty="hard">Hard</button>
+                <button type="button" class="difficulty-btn" data-difficulty="extreme">Extreme</button>
+            </div>
+            <p id="difficulty-desc"></p>
+            <p>Save Game: <button type="button" onclick="saveGame()">Save Now</button></p>
+            <p>Load Game: <button type="button" onclick="loadGame()">Load Last Save</button></p>
+            <p>Reset Game: <button type="button" onclick="resetGameConfirmation()">Reset All Progress</button></p>
+        </div>
+        <button type="button" id="back-to-menu-button-settings">BACK</button>
+    </div>
+
+    <div id="game-screen" class="screen-container hidden">
+        <div class="game-area-wrapper">
+            <div id="map-panel">
+                <h3>Map <span style="font-size:0.7em;color:#999;">(approximate)</span></h3>
+                <div id="map-area"></div>
+                <div class="map-legend">
+                    <span class="legend-x">X</span> Visited <br>
+                    <span class="legend-p">P</span> Player <br>
+                    <span id="legend-smith" class="hidden"><span class="legend-smith">S</span> Blacksmith <br></span>
+                    <span id="legend-alch" class="hidden"><span class="legend-alch">A</span> Alchemist <br></span>
+                    <span id="legend-boss" class="hidden"><span class="legend-boss">B</span> Boss <br></span>
+                </div>
+            </div>
+            <div id="game-text-output" class="game-output"></div>
+            <div id="player-status-panel" class="status-panel">
+                <h3 id="status-panel-title">Player Status</h3>
+                <div id="status-panel-content">Loading status...</div>
+                <div id="inventory-panel" class="">
+                    <div id="inventory-panel-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="command-area">
+            <input type="text" id="command-input" placeholder="Type your command here..." autofocus>
+            <button type="button" id="submit-command">Enter</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
