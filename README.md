@@ -69,7 +69,7 @@ Stuck? Open the **Manual** from the main menu.
 
 ## Built with
 
-Plain HTML, CSS and JavaScript, with no frameworks and no dependencies. Menu background generated with Google AI.
+Plain HTML, CSS and JavaScript, with no frameworks and no dependencies.
 
 ```
 index.html   screens and layout
