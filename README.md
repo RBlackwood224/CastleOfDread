@@ -10,7 +10,7 @@ A text-adventure roguelite that runs right in your browser. Fifty rooms, three c
 
 **https://rblackwood224.github.io/CastleOfDread/**
 
-No download, no account, no install. If the link doesn't load yet, GitHub Pages may still be switching on (*Settings → Pages → Deploy from branch → `main` / root*), or you can download the repo and open `index.html`.
+ If the link doesn't load yet, GitHub Pages may still be switching on (*Settings → Pages → Deploy from branch → `main` / root*), or you can download the repo and open `index.html`.
 
 Your progress is saved in your own browser only. Nothing is ever sent anywhere.
 
